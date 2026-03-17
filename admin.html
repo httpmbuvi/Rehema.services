@@ -135,6 +135,13 @@
         const navMenu = document.getElementById('nav-menu');
         hamburger.addEventListener('click', () => { navMenu.classList.toggle('show'); });
 
+        // Close menu when a link is clicked
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+
         // --- Authentication Logic ---
         const signupContainer = document.getElementById('signup-container');
         const loginContainer = document.getElementById('login-container');
